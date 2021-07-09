@@ -5,8 +5,8 @@ const listaDeDestinos = new Array(
     "Rio de Janeiro"
 );
 const idadeComprador = 15;
-const estaAcompanhada = false;
-const passagemComprada = true;
+const estaAcompanhada = true;
+const passagemComprada = false;
 
 
 console.log("Destinos possíveis");
@@ -24,7 +24,7 @@ if(idadeComprador >= 18 || estaAcompanhada == true) {
 console.log(listaDeDestinos);
 
 console.log("Embarqure: \n\n");
-if(idadeComprador >= 18 && passagemComprada == true) {
+if(idadeComprador >= 18 || estaAcompanhada == true && passagemComprada == true) {
     console.log("Boa Viajem!!");
 
 }else{
