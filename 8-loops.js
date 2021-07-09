@@ -35,11 +35,11 @@ if(podeComprar && destinoExiste){
     console.log("Voce não atende todos os requisitos de compra");
 }
 
-for(let cont = 0; cont <3; cont++){
+// for(let cont = 0; cont <3; cont++){
     
-    if(listaDeDestinos[contador] == destino){
-        destinoExiste = true;
+//     if(listaDeDestinos[contador] == destino){
+//         destinoExiste = true;
         
-    }
-}
+//     }
+// }
  
