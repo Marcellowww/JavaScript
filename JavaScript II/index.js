@@ -1,44 +1,21 @@
-class Cliente {
-    nome;
-    cpf;
-}
+//Importando as classes
+import {Cliente} from "./Cliente.js";
+import {ContaCorrente} from "./ContaCorrente.js";
 
-class ContaCorrente{
-    agencia;
-    #saldo = 0;
-
-    sacar(valor){
-        if(this.#saldo >= valor){
-            this.#saldo -= valor;
-            return valor
-        }
-    }
-
-    depositar(valor){
-        if(valor <= 0){
-            return;
-        }
-
-        this.#saldo += valor
-    }
-    
-}
-
-const cliente1 = new Cliente();
-cliente1.nome = "Marcelo";
-cliente1.cpf = 11122233309;
-
-const cliente2 =  new Cliente();
-cliente2.nome = "Alice";
-cliente2.cpf = 88822233309;
-
-const contaCorrenteMarcelo = new ContaCorrente();
-contaCorrenteMarcelo.agencia = 1001;
-
-contaCorrenteMarcelo.depositar(100);
-
-const valorSacado = contaCorrenteMarcelo.sacar(50);
-console.log(valorSacado);
+//declarando variaveis 
+const cliente1 = new Cliente("Marcelo", 11122233309);
+const cliente2 =  new Cliente("Alice", 88822233309);
 
 
-console.log(contaCorrenteMarcelo);
+
+const conta1 = new ContaCorrente(1001, cliente1);
+conta1.depositar(500);
+conta1.sacar(100);
+
+const conta2 = new ContaCorrente(102, cliente2);
+
+let valor = 200;
+conta1.transferir(valor, conta2);
+
+
+console.log(conta1, conta2);
